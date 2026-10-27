@@ -1,18 +1,12 @@
-<!-- OPENSPEC:START -->
-# OpenSpec Instructions
+# Agent instructions
 
-These instructions are for AI assistants working in this project.
+Read `README.md`, `docs/project.md`, and nearby code before making changes.
 
-Always open `@/openspec/AGENTS.md` when the request:
-- Mentions planning or proposals (words like proposal, spec, change, plan)
-- Introduces new capabilities, breaking changes, architecture shifts, or big performance/security work
-- Sounds ambiguous and you need the authoritative spec before coding
-
-Use `@/openspec/AGENTS.md` to learn:
-- How to create and apply change proposals
-- Spec format and conventions
-- Project structure and guidelines
-
-Keep this managed block so 'openspec update' can refresh the instructions.
-
-<!-- OPENSPEC:END -->
+- Keep changes focused on local skill sharing for Codex, OpenCode, and Antigravity IDE.
+- Preserve existing user files and symlinks. Never replace conflicting destinations automatically.
+- Use quoted paths and maintain compatibility with Bash on macOS and GNU/Linux.
+- Keep single-skill and `--all` mounting behaviour documented in the README.
+- Update relevant documentation and add regression coverage when behaviour changes.
+- Run `bash -n mount-skill.sh`, `python3 -B -m unittest discover -s tests -v`, and `git diff --check`.
+- Tests must use temporary home directories and must not modify installed skills.
+- State what changed, checks run, and any unverified behaviour in the handoff.
